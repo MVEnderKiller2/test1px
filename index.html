@@ -1,0 +1,406 @@
+<!-- HUGE work in progress. DON'T expect anything to be nice and functional. -->
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Free Online Tools</title>
+    <meta charset="UTF-8">
+    
+	<script>
+		function showCookies() {
+			const cookieslol = document.cookie;
+		document.getElementById("cookie").innerHTML = cookieslol;
+		}
+		function backButton() {
+			document.getElementById("body").innerHTML = `<style>
+      body {
+    background-color: #052662;
+    font-family: roboto;
+    text-align: center;
+    position: relative;
+    top: 100px;
+	overflow-x: hidden;
+  }
+      #center {
+    width: 100%;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #fff;
+    border-radius: 8px;
+  }
+  h1 {
+text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  }
+a.button {
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: buttontext;
+    background-color: buttonface;
+    text-decoration: none;
+}
+#calc {
+	background-color: #052662;
+	font-family: Tahoma;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	justify-content: center;
+}
+
+#section {
+	width: 200px;
+	padding: 8px 8px 15px 8px;
+	margin: 20px auto;
+	background-color: black;
+	border-radius: 5px;
+	border-top: 2px solid #FFF;
+	border-right: 2px solid #FFF;
+	border-bottom: 2px solid #C1C1C1;
+	border-left: 2px solid #C1C1C1;
+	box-shadow: -3px 3px 7px rgba(0, 0, 0, .6), inset -100px 0px 100px rgba(124, 131, 150, 0.5);
+}
+
+#display {
+	display: block;
+	margin: 15px auto;
+	height: 42px;
+	width: 174px;
+	padding: 0 10px;
+	font-size: 28px;
+	color: #242020;
+	text-align: right;
+	font-weight: 400;
+	border-radius: 4px;
+	border-top: 1px solid #C1C1C1;
+	border-right: 1px solid #C1C1C1;
+	border-bottom: 1px solid #FFF;
+	border-left: 1px solid #FFF;
+	background-color: #FFF;
+	box-shadow: inset 0px 0px 10px #232c37, inset 0px -20px 1px rgba(150, 150, 150, .2);
+}
+
+.button {
+	display: inline-block;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 4px;
+	margin: 2px;
+	width: 42px;
+	height: 42px;
+}
+
+.mathButtons {
+	margin: 2px 2px 6px 2px;
+	color: #FFF;
+	text-shadow: -1px -1px 0px #44006F;
+	background-color: #2b6477;
+	border-top: 2px solid #C1C1C1;
+	border-right: 2px solid #C1C1C1;
+	border-bottom: 2px solid #0c0b0b;
+	border-left: 2px solid #181818;
+	box-shadow: 0px 0px 2px #030303, inset 0px -20px 1px #1b4e5f;
+}
+
+.digits {
+	color: #181818;
+	text-shadow: 1px 1px 0px #FFF;
+	background-color: #EBEBEB;
+	border-top: 2px solid #FFF;
+	border-right: 2px solid #FFF;
+	border-bottom: 2px solid #C1C1C1;
+	border-left: 2px solid #C1C1C1;
+	border-radius: 4px;
+	box-shadow: 0px 0px 2px #030303, inset 0px -20px 1px #DCDCDC;
+}
+
+.digits:hover,
+.mathButtons:hover,
+#clearButton:hover {
+	background-color: #425bfd;
+	box-shadow: 0px 0px 2px #425bfd, inset 0px -20px 1px #455ae5;
+	border-top: 2px solid #3d6abc;
+	border-right: 2px solid #FFF;
+	border-bottom: 2px solid #131a48;
+	border-left: 2px solid #131a48;
+}
+
+#clearButton {
+	color: #FFF;
+	text-shadow: -1px -1px 0px #44006F;
+	box-shadow: 0px 0px 2px #030303, inset 0px -20px 1px #B00000;
+	background-color: #D20000;
+	border-top: 2px solid #FF8484;
+	border-right: 2px solid #FF8484;
+	border-bottom: 2px solid #800000;
+	border-left: 2px solid #800000;
+}
+
+    </style>
+    <h1>Free online calculator</h1>
+    <br><br>
+    <div id="calc">
+      <div class="container">
+	      <fieldset id="section">
+		      <form name="calculator">
+
+			    <input id="display" type="text" name="display" readonly>
+
+		      	<input class="button digits" type="button" value="7" onclick="calculator.display.value += '7'">
+		      	<input class="button digits" type="button" value="8" onclick="calculator.display.value += '8'">
+		      	<input class="button digits" type="button" value="9" onclick="calculator.display.value += '9'">
+		      	<input class="button mathButtons" type="button" value="+" onclick="calculator.display.value += ' + '">
+		      	<br>
+		      	<input class="button digits" type="button" value="4" onclick="calculator.display.value += '4'">
+		      	<input class="button digits" type="button" value="5" onclick="calculator.display.value += '5'">
+		      	<input class="button digits" type="button" value="6" onclick="calculator.display.value += '6'">
+		      	<input class="button mathButtons" type="button" value="-" onclick="calculator.display.value += ' - '">
+		      	<br>
+		      	<input class="button digits" type="button" value="1" onclick="calculator.display.value += '1'">
+		      	<input class="button digits" type="button" value="2" onclick="calculator.display.value += '2'">
+		      	<input class="button digits" type="button" value="3" onclick="calculator.display.value += '3'">
+		      	<input class="button mathButtons" type="button" value="x" onclick="calculator.display.value += ' * '">
+		      	<br>
+		      	<input id="clearButton" class="button" type="button" value="C" onclick="calculator.display.value = ''">
+		      	<input class="button digits" type="button" value="0" onclick="calculator.display.value += '0'">
+		      	<input class="button mathButtons" type="button" value="=" onclick="calculator.display.value = eval(calculator.display.value)">
+		      	<input class="button mathButtons" type="button" value="/" onclick="calculator.display.value += ' / '">
+		      </form>
+	      </fieldset>
+      </div>
+    </div>
+    <h3 style="color: #fff;">
+      This calculator is made for easy, quick, free calculations at your fingertips. 
+    </h3>
+    <br><br><br>
+	<button onclick="window.location.href='comp.html'">HTML Compiler (Big work in progress!)</button>
+	<br><br><br>`
+		}
+	document.addEventListener('keydown', function(event) {
+    if (event.altKey && event.key === "`") {
+		document.getElementById("body").innerHTML = `<div id="center">
+      <h1>Select File:</h1>
+      	<button id="back" onclick="backButton();">Back</button>
+		<div id="a">
+          <a class="button" href="try-it-editor/c.html">Celeste</a>
+          <br><br>
+          <a class="button" href="try-it-editor/h.html">Hollow Knight</a>
+    	  <br><br>
+          <a class="button" href="try-it-editor/u.html">Undertale Yellow - Shades of Justice</a>
+          <br><br>
+		  <a class="button" href="try-it-editor/test.html">test</a>
+          <br><br>
+
+        </div>
+	<style>
+	      body {
+    background-color: #052662;
+    font-family: roboto;
+    text-align: center;
+    position: relative;
+    top: 100px;
+  }
+      #center {
+    width: 500px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #fff;
+    border-radius: 8px;
+	overflow-x: hidden;
+  }
+  h1 {
+text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  }
+  #back {
+  top: 2px;
+  left: 2px;
+  }
+  </style>`
+	}
+});
+
+	
+	</script>
+
+  </head>
+  <body id="body">
+	<style>
+      body {
+    background-color: #052662;
+    font-family: roboto;
+    text-align: center;
+    position: relative;
+    top: 100px;
+	overflow-x: hidden;
+  }
+      #center {
+    width: 100%;
+    border-style: solid;
+    border-width: 4px;
+    border-color: #fff;
+    border-radius: 8px;
+  }
+  h1 {
+text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  }
+a.button {
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: buttontext;
+    background-color: buttonface;
+    text-decoration: none;
+}
+#calc {
+	background-color: #052662;
+	font-family: Tahoma;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	justify-content: center;
+}
+
+#section {
+	width: 200px;
+	padding: 8px 8px 15px 8px;
+	margin: 20px auto;
+	background-color: black;
+	border-radius: 5px;
+	border-top: 2px solid #FFF;
+	border-right: 2px solid #FFF;
+	border-bottom: 2px solid #C1C1C1;
+	border-left: 2px solid #C1C1C1;
+	box-shadow: -3px 3px 7px rgba(0, 0, 0, .6), inset -100px 0px 100px rgba(124, 131, 150, 0.5);
+}
+
+#display {
+	display: block;
+	margin: 15px auto;
+	height: 42px;
+	width: 174px;
+	padding: 0 10px;
+	font-size: 28px;
+	color: #242020;
+	text-align: right;
+	font-weight: 400;
+	border-radius: 4px;
+	border-top: 1px solid #C1C1C1;
+	border-right: 1px solid #C1C1C1;
+	border-bottom: 1px solid #FFF;
+	border-left: 1px solid #FFF;
+	background-color: #FFF;
+	box-shadow: inset 0px 0px 10px #232c37, inset 0px -20px 1px rgba(150, 150, 150, .2);
+}
+
+.button {
+	display: inline-block;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 4px;
+	margin: 2px;
+	width: 42px;
+	height: 42px;
+}
+
+.mathButtons {
+	margin: 2px 2px 6px 2px;
+	color: #FFF;
+	text-shadow: -1px -1px 0px #44006F;
+	background-color: #2b6477;
+	border-top: 2px solid #C1C1C1;
+	border-right: 2px solid #C1C1C1;
+	border-bottom: 2px solid #0c0b0b;
+	border-left: 2px solid #181818;
+	box-shadow: 0px 0px 2px #030303, inset 0px -20px 1px #1b4e5f;
+}
+
+.digits {
+	color: #181818;
+	text-shadow: 1px 1px 0px #FFF;
+	background-color: #EBEBEB;
+	border-top: 2px solid #FFF;
+	border-right: 2px solid #FFF;
+	border-bottom: 2px solid #C1C1C1;
+	border-left: 2px solid #C1C1C1;
+	border-radius: 4px;
+	box-shadow: 0px 0px 2px #030303, inset 0px -20px 1px #DCDCDC;
+}
+
+.digits:hover,
+.mathButtons:hover,
+#clearButton:hover {
+	background-color: #425bfd;
+	box-shadow: 0px 0px 2px #425bfd, inset 0px -20px 1px #455ae5;
+	border-top: 2px solid #3d6abc;
+	border-right: 2px solid #FFF;
+	border-bottom: 2px solid #131a48;
+	border-left: 2px solid #131a48;
+}
+
+#clearButton {
+	color: #FFF;
+	text-shadow: -1px -1px 0px #44006F;
+	box-shadow: 0px 0px 2px #030303, inset 0px -20px 1px #B00000;
+	background-color: #D20000;
+	border-top: 2px solid #FF8484;
+	border-right: 2px solid #FF8484;
+	border-bottom: 2px solid #800000;
+	border-left: 2px solid #800000;
+}
+
+    </style>
+    <h1>Free online calculator</h1>
+    <br><br>
+    <div id="calc">
+      <div class="container">
+	      <fieldset id="section">
+		      <form name="calculator">
+
+			    <input id="display" type="text" name="display" readonly>
+
+		      	<input class="button digits" type="button" value="7" onclick="calculator.display.value += '7'">
+		      	<input class="button digits" type="button" value="8" onclick="calculator.display.value += '8'">
+		      	<input class="button digits" type="button" value="9" onclick="calculator.display.value += '9'">
+		      	<input class="button mathButtons" type="button" value="+" onclick="calculator.display.value += ' + '">
+		      	<br>
+		      	<input class="button digits" type="button" value="4" onclick="calculator.display.value += '4'">
+		      	<input class="button digits" type="button" value="5" onclick="calculator.display.value += '5'">
+		      	<input class="button digits" type="button" value="6" onclick="calculator.display.value += '6'">
+		      	<input class="button mathButtons" type="button" value="-" onclick="calculator.display.value += ' - '">
+		      	<br>
+		      	<input class="button digits" type="button" value="1" onclick="calculator.display.value += '1'">
+		      	<input class="button digits" type="button" value="2" onclick="calculator.display.value += '2'">
+		      	<input class="button digits" type="button" value="3" onclick="calculator.display.value += '3'">
+		      	<input class="button mathButtons" type="button" value="x" onclick="calculator.display.value += ' * '">
+		      	<br>
+				<input class="button digits" type="button" value="π" onclick="calculator.display.value += '3.14'">
+				<input class="button digits" type="button" value="0" onclick="calculator.display.value += '0'">
+				<input class="button digits" type="button" value="." onclick="calculator.display.value += '.'">
+				<input class="button mathButtons" type="button" value="/" onclick="calculator.display.value += ' / '">
+				<br>
+		      	<input id="clearButton" class="button" type="button" value="C" onclick="calculator.display.value = ''">
+		      	<input class="button digits" type="button" value="(" onclick="calculator.display.value += '('">
+		      	<input class="button digits" type="button" value=")" onclick="calculator.display.value += ')'">
+				<input class="button mathButtons" type="button" value="=" onclick="calculator.display.value = eval(calculator.display.value)">
+		      </form>
+	      </fieldset>
+      </div>
+    </div>
+    <h3 style="color: #fff;">
+      This calculator is made for easy, quick, free calculations at your fingertips. 
+    </h3>
+    <br><br><br>
+	<button onclick="window.location.href='comp.html'">HTML Compiler (Big work in progress!)</button>
+	<br><br><br>
+  </body>
+</html>

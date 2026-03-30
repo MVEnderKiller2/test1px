@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML Compiler</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <script>
+            
+        </script>
+    </head>
+    <body>
+        <style>
+            body {
+                overflow-x: hidden;
+                font-family: 'Roboto';
+            }
+            #start-menu-title {
+                color: #000;
+                text-align: center;
+                position: relative;
+                top: 125px;
+            }
+            #start-menu-start-button {
+                color: #fff;
+                background-color: #009D0A;
+                width: 130px;
+                height: 82px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 3px;
+            }
+            #start-menu-start-button:hover {
+                background-color: #00C206;
+            }
+            #start-menu-start-button:active {
+                transform: scale(0.87);
+            }
+            #start-menu-start-button-cont {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+        </style>
+        <h1 id="start-menu-title">
+            Online HTML Compiler
+        </h1>
+        <div id="start-menu-start-button-cont">
+            <div id="start-menu-start-button">
+                <h2 onclick="window.location.href='complr.html'">
+                    Start
+                </h2>
+            </div>
+        </div>
+    </body>
+</html>
